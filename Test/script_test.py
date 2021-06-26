@@ -1,18 +1,18 @@
-from flask import Flask as FL
+from flask import Flask,render_template 
 
 # Create FL obj
-application = FL(__name__)
+application = Flask(__name__)
 
-# URL for routing
+# URL for routing has to be followed by its function
 @application.route('/')
 # Homepage
 def home():
-    return "Tan.com testpage"
+    return render_template("home.html")
 
 @application.route('/contact/')
 # Contact page
 def contact():
-    return "tjai8597@gmail.com"
+    return render_template("contact.html")
 
 
 
